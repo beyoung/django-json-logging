@@ -54,7 +54,7 @@ class JSONFormatter(Formatter):
         if 'asctime' in settings.LOGGING_FIELDS:
             record.asctime = self.formatTime(record, self.datefmt)
 
-        record = self.add_user(record)
+        # record = self.add_user(record)
         message = record.getMessage()
         dict_record = self.to_dict(message, record)
         return self.serializer.to_json(dict_record)
